@@ -9,15 +9,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Library NewPing.h
-https://github.com/PaulStoffregen/NewPing.git
+- Library NewPing.h [github](https://github.com/PaulStoffregen/NewPing.git)
 
- - Arduino UNO
+- Arduino UNO
 
 - HC-SR04 Ultrasonic Sensor
 
 ![Photo](https://img1.banggood.com/thumb/view/oaupload/banggood/images/CD/2E/707cc57b-02f0-8189-5420-d96fccb486b1.jpg)
 
+- LED Bargraph with 10 LEDs
+
+![Photo](http://www.learningaboutelectronics.com/images/10-segment-LED-bar-graph.png)
+
+- 10 resistors from 100 to 470 ohms
 
 ### Installing
 
@@ -53,5 +57,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Tell me if you are using 
+* Now we can control our water volume in a cheap way ;)
 
