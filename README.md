@@ -9,9 +9,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Library NewPing.h [github](https://github.com/PaulStoffregen/NewPing.git)
+- Library NewPing.h Get the lastest version here [github](https://github.com/PaulStoffregen/NewPing.git)
 
-- Arduino UNO
+- Arduino (UNO, Mega, Nano, etc)
 
 - HC-SR04 Ultrasonic Sensor
 
