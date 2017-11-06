@@ -44,7 +44,7 @@ void loop() {
   
 
 void setbargraph(int level) {
-  //Acende somente atÃ© o nivel passado na variavel qtde
+  //Acende somente até o nivel passado na variavel qtde
   for (int i = 0; i < 11; i++) {
      if (i < level) {
         digitalWrite(i+2, LOW);
@@ -54,5 +54,4 @@ void setbargraph(int level) {
      }
   }
 }
-
 
