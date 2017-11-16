@@ -16,7 +16,8 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and
 
 void setup() {
   
-  Serial.begin(115200); // Open serial monitor at 115200 baud to see ping results.
+ // Serial.begin(115200); // Open serial monitor at 115200 baud to see ping results.
+  Serial.begin(57600); // Open serial monitor at 115200 baud to see ping results.
   
   //Determines all ports to Bar graph from 2 to 12
   for (int i = 2; i < 12; i++) {
@@ -30,7 +31,8 @@ void loop() {
   distance = sonar.ping_cm();
   delay(150);                     // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
   level = map(distance, FULL, EMPTY, 0, 10);  //Maps distance to level from 0 to 10
- 
+  Serial.println("working...");
+
   if (distance != 0) {   // Somente ativa se o valor for diferente de 0 
      //If debug on
     Serial.print("Ping: ");
@@ -42,7 +44,7 @@ void loop() {
 
   }
   
-
+}
 void setbargraph(int level) {
   //Acende somente até o nivel passado na variavel qtde
   for (int i = 0; i < 11; i++) {
