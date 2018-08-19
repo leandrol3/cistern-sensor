@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------
 // Cistern Sensor - Leandro Lopes - 05/Nov/2017
-// Update - 07/Apr/2018
+// Update - 19/Aug/2018
 // Version 1.0
 // ---------------------------------------------------------------------------
 
@@ -10,14 +10,13 @@
 #define ECHO_PIN     12  // Arduino pin tied to echo pin on the ultrasonic sensor.
 #define MAX_DISTANCE 200 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
 
-#define EMPTY 148 // Height to measure the capacity when is empty in centimeters
+#define EMPTY 154 // Height to measure the capacity when is empty in centimeters
 #define FULL 4 // Height to measure the capacity when is full in centimeters
 
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
 
 void setup() {
   
- // Serial.begin(115200); // Open serial monitor at 115200 baud to see ping results.
   Serial.begin(57600); // Open serial monitor at 115200 baud to see ping results.
   
   //Determines all ports to Bar graph from 2 to 12
@@ -28,24 +27,24 @@ void setup() {
 
 void loop() {
   int distance;  //load distance from ultrasonic sensor
-  int level; //level of bar graph to print between 148 (max height - empty) to 5 (min height - full)
+  int level; //level of bar graph to print between 154 (max height - empty) to 4 (min height - full)
   distance = sonar.ping_cm();
-  delay(150);                     // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
+  delay(150);                     // Wait 150ms between pings (about 8 pings/sec). 29ms should be the shortest delay between pings.
+  //If debug on
+//  distance = 10;
+  
   level = map(distance, FULL, EMPTY, 0, 10);  //Maps distance to level from 0 to 10
-//  Serial.println("working...");
-
   if (distance != 0) {   // Somente ativa se o valor for diferente de 0 
-     //If debug on
+//    If debug on
 //    Serial.print("Ping: ");
 //    Serial.print(distance); // Send ping, get distance in cm and print result (0 = outside set distance range)
 //    Serial.println("cm");
 //    Serial.println(level);
-      setbargraph(level);
-  }
-  
+    setbargraph(level);
+  } 
 }
 void setbargraph(int level) {
-  //Acende somente até o nivel passado na variavel qtde
+  //Acende somente ao nivel passado na variavel
   for (int i = 0; i < 11; i++) {
      if (i < level) {
         digitalWrite(i+2, LOW);
@@ -55,5 +54,3 @@ void setbargraph(int level) {
      }
   }
 }
-
-
