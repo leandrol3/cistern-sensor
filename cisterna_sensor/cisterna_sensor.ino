@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Cistern Sensor - Leandro Lopes - 05/Nov/2017
 // Update - 7/Nov/2020
-// Version 1.0
+// Version 1.1
 // ---------------------------------------------------------------------------
 
 #include <NewPing.h> //Library to use ultrasonic sensor
